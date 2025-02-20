@@ -13,21 +13,21 @@ score = 0
 var = 0
 
 def error_detection():
-    while
-    try:
-        var = int(input(:))
-    except ValueError:
-        print ("Please enter a number")
+    while True:
+        try:
+            var = int(input(":"))
+            break
+        except ValueError:
+            print ("Please enter a number")
+    return var
 
 
 if __name__ == '__main__':
     for i in range(len(questions)):
         print(questions[i])
-        var = i
         print(possible_answers[i])
-        answer = input(":")
-        answer = re.sub(r"\s+", "", answer)
-        if answer.lower() == answers[i]:
+        answer = error_detection()
+        if answer == answers[i]:
             print("Correct")
             score += 1
         else:
