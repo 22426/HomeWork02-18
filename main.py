@@ -6,7 +6,7 @@ questions = ["What is the capital of NZ?",
             ]
 possible_answers = {0 : ["1. Wellington", "2. Auckland", "3. Queenstown", "4. Sydney"],
                     1 : ["1. 11", "2. Eleven", "3. three", "4. None of the above"],
-                    2 : ["1. Mt. Cook", "Mount Cook", "3. Mountain Cook", "4. Aoraki"]
+                    2 : ["1. Mt. Cook", "3. Mount Cook", "3. Mountain Cook", "4. Aoraki"]
                     }
 answers = [1, 2, 2]
 score = 0
@@ -25,7 +25,8 @@ def error_detection():
 if __name__ == '__main__':
     for i in range(len(questions)):
         print(questions[i])
-        print(possible_answers[i])
+        for u in range(0, len(possible_answers[i])):
+            print(possible_answers[i][u])
         answer = error_detection()
         if answer == answers[i]:
             print("Correct")
